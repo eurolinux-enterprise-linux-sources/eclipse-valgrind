@@ -1,19 +1,20 @@
-%define src_repo_tag   R0_5_0
+%define src_repo_tag   R0_6_1
 %define eclipse_base   %{_libdir}/eclipse
 %define install_loc    %{_libdir}/eclipse/dropins/valgrind
-%define qualifier      201003171651
+%define qualifier      201010081413
 
 # Package in %%{_libdir} but no native code so no debuginfo
 %global debug_package %{nil}
 
 Name:           eclipse-valgrind
-Version:        0.5.0
+Version:        0.6.1
 Release:        1%{?dist}
 Summary:        Valgrind Tools Integration for Eclipse
 
 Group:          Development/Tools
 License:        EPL
 URL:            http://www.eclipse.org/linuxtools/projectPages/valgrind
+# Fetched using: sh %{name}-fetch-src.sh %{src_repo_tag}
 Source0:        %{name}-fetched-src-%{src_repo_tag}.tar.bz2
 Source1:        %{name}-fetch-src.sh
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -22,13 +23,13 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 ExclusiveArch: %{ix86} x86_64
 
 BuildRequires: java-devel >= 1.5.0
-BuildRequires: eclipse-cdt >= 1:6.0.0
-BuildRequires: eclipse-linuxprofilingframework >= 0.3.0
+BuildRequires: eclipse-cdt >= 1:7.0.0
+BuildRequires: eclipse-linuxprofilingframework >= 0.6.0
 BuildRequires: eclipse-birt >= 2.5
-BuildRequires: eclipse-pde >= 1:3.5.0
-Requires: eclipse-platform >= 1:3.5.0
-Requires: eclipse-cdt >= 1:6.0.0
-Requires: eclipse-linuxprofilingframework >= 0.3.0
+BuildRequires: eclipse-pde >= 1:3.6.0
+Requires: eclipse-platform >= 1:3.6.0
+Requires: eclipse-cdt >= 1:7.0.0
+Requires: eclipse-linuxprofilingframework >= 0.6.0
 Requires: eclipse-birt >= 2.5
 Requires: valgrind >= 3.3.0
 
@@ -61,6 +62,15 @@ install -d -m 755 %{buildroot}%{install_loc}
 %doc org.eclipse.linuxtools.valgrind-feature/epl-v10.html
 
 %changelog
+* Fri Oct 8 2010 Severin Gehwolf <sgehwolf@redhat.com> 0.6.1-1
+- Upstream 0.6.1 release.
+
+* Thu Jul 15 2010 Elliott Baron <ebaron@fedoraproject.org> 0.6.0-1
+- Upstream 0.6.0 release.
+
+* Mon Mar 22 2010 Alexander Kurtakov <akurtako@redhat.com> 0.5.0-2
+- Match upstream qualifier.
+
 * Mon Mar 22 2010 Alexander Kurtakov <akurtako@redhat.com> 0.5.0-1
 - Rebase to 0.5.0.
 

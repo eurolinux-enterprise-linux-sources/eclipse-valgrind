@@ -1,3 +1,28 @@
+2010-08-25  Elliott Baron  <ebaron@fedoraproject.org>
+
+	Bug #323049
+	* feature.xml: Regenerate dependencies, bump version to 0.6.1. Ensure
+	org.mozilla.{rhino,javascript} are not listed.
+
+2010-05-18  Andrew Overholt  <overholt@redhat.com>
+
+	* feature.properties: Fix provider name.
+
+2010-04-26  Andrew Overholt  <overholt@redhat.com>
+
+	* feature.properties: Match consistent license text (bug #306627).  Update
+	copyright year.
+	* license.html: New file.  HTML version of SUA (bug #306627).
+	* build.properties: Include license.html.
+
+2010-04-13  Andrew Overholt  <overholt@redhat.com>
+
+	* feature.xml: Restrict to os=linux.
+
+2010-04-12  Andrew Overholt  <overholt@redhat.com>
+
+	* feature.properties: Match consistent license text (bug #306627).
+
 2009-08-11  Elliott Baron  <ebaron@redhat.com>
 
 	* feature.xml: Bump version to 0.3.0.
